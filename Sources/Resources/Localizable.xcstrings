@@ -1,0 +1,245 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "\"per\" period preposition" : {
+      "comment" : "Format: \"per month\"",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "per"
+          }
+        }
+      }
+    },
+    "Best offer" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Best offer"
+          }
+        }
+      }
+    },
+    "Daily" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Daily"
+          }
+        }
+      }
+    },
+    "Day" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Day"
+          }
+        }
+      }
+    },
+    "Month" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Month"
+          }
+        }
+      }
+    },
+    "Monthly" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Monthly"
+          }
+        }
+      }
+    },
+    "N day" : {
+      "comment" : "Format: \"3 days\"",
+      "localizations" : {
+        "en" : {
+          "variations" : {
+            "plural" : {
+              "one" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%d day"
+                }
+              },
+              "other" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%d days"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "N month" : {
+      "comment" : "Format: \"3 months",
+      "localizations" : {
+        "en" : {
+          "variations" : {
+            "plural" : {
+              "one" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%d month"
+                }
+              },
+              "other" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%d months"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "N periods free trial" : {
+      "comment" : "Format: \"3 days free trial",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%@ free trial"
+          }
+        }
+      }
+    },
+    "N week" : {
+      "comment" : "Format: \"3 weeks\"",
+      "localizations" : {
+        "en" : {
+          "variations" : {
+            "plural" : {
+              "one" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%d week"
+                }
+              },
+              "other" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%d weeks"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "N year" : {
+      "comment" : "Format: \"3 years\"",
+      "localizations" : {
+        "en" : {
+          "variations" : {
+            "plural" : {
+              "one" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%d year"
+                }
+              },
+              "other" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%d years"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "Paid intro offer period string" : {
+      "comment" : "Format: \"9.99 $ for the first 2 weeks)",
+      "localizations" : {
+        "en" : {
+          "variations" : {
+            "plural" : {
+              "one" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%1$@ for the 1st %3$@"
+                }
+              },
+              "other" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%1$@ for the first %2$d %3$@"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "then" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "then"
+          }
+        }
+      }
+    },
+    "Week" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Week"
+          }
+        }
+      }
+    },
+    "Weekly" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Weekly"
+          }
+        }
+      }
+    },
+    "Year" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Year"
+          }
+        }
+      }
+    },
+    "Yearly" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Yearly"
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.0"
+}
