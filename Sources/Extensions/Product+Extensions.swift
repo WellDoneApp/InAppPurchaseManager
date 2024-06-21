@@ -48,23 +48,11 @@ public extension Product {
 public extension Product {
     
     var localizedPeriod: String? {
-        guard let subscriptionPeriod = self.subscription?.subscriptionPeriod else { return nil }
-        var unit = subscriptionPeriod.unit
-        
-        if unit == .day, subscriptionPeriod.value == 7 {
-            unit = .week
-        }
-        return unit.localizedPeriod
+        return trueUnit?.localizedPeriod
     }
     
     var localizedPeriodUnit: String? {
-        guard let subscriptionPeriod = self.subscription?.subscriptionPeriod else { return nil }
-        var unit = subscriptionPeriod.unit
-        
-        if unit == .day, subscriptionPeriod.value == 7 {
-            unit = .week
-        }
-        return unit.localizedPeriodUnit
+        return trueUnit?.localizedPeriodUnit
     }
     
 }
@@ -102,7 +90,7 @@ public extension Product {
 public extension Product {
     
     var dailyPrice: Decimal? {
-        guard let unit = self.subscription?.subscriptionPeriod.unit else { return nil }
+        guard let unit = self.trueUnit else { return nil }
         switch unit {
             case .day:
                 return self.price
@@ -118,7 +106,7 @@ public extension Product {
     }
     
     var weeklyPrice: Decimal? {
-        guard let unit = self.subscription?.subscriptionPeriod.unit else { return nil }
+        guard let unit = self.trueUnit else { return nil }
         switch unit {
             case .day:
                 return nil
@@ -134,7 +122,7 @@ public extension Product {
     }
     
     var monthlyPrice: Decimal? {
-        guard let unit = self.subscription?.subscriptionPeriod.unit else { return nil }
+        guard let unit = self.trueUnit else { return nil }
         switch unit {
             case .day:
                 return nil
@@ -150,7 +138,7 @@ public extension Product {
     }
     
     var yearlyPrice: Decimal? {
-        guard let unit = self.subscription?.subscriptionPeriod.unit else { return nil }
+        guard let unit = self.trueUnit else { return nil }
         switch unit {
             case .day:
                 return nil
@@ -255,7 +243,7 @@ public extension Product {
         switch introOffer.paymentMode {
             case .payAsYouGo, .payUpFront:
                 return String(
-                    format: String(localized: "Paid intro offer period string", defaultValue: "%@ for the %d %@", comment: "Format: \"9.99 $ for the first 2 weeks)"),
+                    format: String(localized: "Paid intro offer period string", defaultValue: "%@ for the %lld %@", comment: "Format: \"9.99 $ for the first 2 weeks)"),
                     formattedPrice,
                     introOffer.periodCount,
                     introOffer.period.unit.localizedPeriodUnit(periodValue: introOffer.periodCount)
@@ -267,14 +255,14 @@ public extension Product {
     
     /// Format: "per week" or "per month"
     func perPeriodUnitString(unit: Product.SubscriptionPeriod.Unit? = nil) -> String? {
-        guard let unit = unit ?? self.subscription?.subscriptionPeriod.unit else { return nil }
+        guard let unit = unit ?? self.trueUnit else { return nil }
         let per = String(localized: "\"per\" period preposition", defaultValue: "per", comment: "Format: \"per month\"")
         return "\(per) \(unit.localizedPeriodUnit.lowercased())"
     }
     
     /// Format: "9.99 $ per week" or  "9.99 $/week" if set perText = "/"
     func pricePerPeriodUnitString(unit: Product.SubscriptionPeriod.Unit? = nil, perText: String? = nil) -> String? {
-        guard let unit = unit ?? self.subscription?.subscriptionPeriod.unit else { return nil }
+        guard let unit = unit ?? self.trueUnit else { return nil }
         var price: String?
         switch unit {
             case .day:
@@ -297,6 +285,27 @@ public extension Product {
             
         } else {
             return nil
+        }
+    }
+    
+    private var trueUnit: Product.SubscriptionPeriod.Unit? {
+        guard let unit = self.subscription?.subscriptionPeriod.unit else { return nil }
+        
+        switch unit {
+            case .day:
+                if let value = self.subscription?.subscriptionPeriod.value, value == 7 {
+                    return .week
+                } else {
+                    return .day
+                }
+            case .week:
+                return .week
+            case .month:
+                return .month
+            case .year:
+                return .year
+            @unknown default:
+                return nil
         }
     }
     
@@ -340,13 +349,13 @@ public extension Product.SubscriptionPeriod.Unit {
     func localizedPeriodUnit(periodValue: Int) -> String {
         switch self {
             case .day:
-                return String(format: String(localized: "N day", defaultValue: "%d day", comment: "Format: \"3 days\""), periodValue)
+                return String(format: String(localized: "N day", defaultValue: "%lld day", comment: "Format: \"3 days\""), periodValue)
             case .week:
-                return String(format: String(localized: "N week", defaultValue: "%d week", comment: "Format: \"3 weeks\""), periodValue)
+                return String(format: String(localized: "N week", defaultValue: "%lld week", comment: "Format: \"3 weeks\""), periodValue)
             case .month:
-                return String(format: String(localized: "N month", defaultValue: "%d month", comment: "Format: \"3 months"), periodValue)
+                return String(format: String(localized: "N month", defaultValue: "%lld month", comment: "Format: \"3 months"), periodValue)
             case .year:
-                return String(format: String(localized: "N year", defaultValue: "%d year", comment: "Format: \"3 years\""), periodValue)
+                return String(format: String(localized: "N year", defaultValue: "%lld year", comment: "Format: \"3 years\""), periodValue)
             @unknown default:
                 return ""
         }
