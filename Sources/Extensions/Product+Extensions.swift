@@ -183,7 +183,7 @@ public extension Product {
         guard let introOffer = self.subscription?.introductoryOffer,
               let pricePerPeriodUnitString = pricePerPeriodUnitString()
         else { return nil }
-        let then = String(localized: "then")
+        let then = String(localized: "then", bundle: .module)
         
         switch introOffer.paymentMode {
             case .freeTrial:
@@ -219,7 +219,7 @@ public extension Product {
               let introPeriodString = introPeriodString
         else { return nil }
         
-        return String(localized: "N periods free trial", defaultValue: "\(introPeriodString) free trial", comment: "Format: \"3 days free trial")
+        return String(localized: "N periods free trial", defaultValue: "\(introPeriodString) free trial", bundle: .module, comment: "Format: \"3 days free trial")
     }
     
     /// Format: "3 days" or "1 month"
@@ -243,7 +243,7 @@ public extension Product {
         switch introOffer.paymentMode {
             case .payAsYouGo, .payUpFront:
                 return String(
-                    format: String(localized: "Paid intro offer period string", defaultValue: "%@ for the %lld %@", comment: "Format: \"9.99 $ for the first 2 weeks)"),
+                    format: String(localized: "Paid intro offer period string", defaultValue: "%@ for the %lld %@", bundle: .module, comment: "Format: \"9.99 $ for the first 2 weeks)"),
                     formattedPrice,
                     introOffer.periodCount,
                     introOffer.period.unit.localizedPeriodUnit(periodValue: introOffer.periodCount)
@@ -256,7 +256,7 @@ public extension Product {
     /// Format: "per week" or "per month"
     func perPeriodUnitString(unit: Product.SubscriptionPeriod.Unit? = nil) -> String? {
         guard let unit = unit ?? self.trueUnit else { return nil }
-        let per = String(localized: "\"per\" period preposition", defaultValue: "per", comment: "Format: \"per month\"")
+        let per = String(localized: "\"per\" period preposition", defaultValue: "per", bundle: .module, comment: "Format: \"per month\"")
         return "\(per) \(unit.localizedPeriodUnit.lowercased())"
     }
     
@@ -317,13 +317,13 @@ public extension Product.SubscriptionPeriod.Unit {
     var localizedPeriod: String {
         switch self {
             case .day:
-                return String(localized: "Daily")
+                return String(localized: "Daily", bundle: .module)
             case .week:
-                return String(localized: "Weekly")
+                return String(localized: "Weekly", bundle: .module)
             case .month:
-                return String(localized: "Monthly")
+                return String(localized: "Monthly", bundle: .module)
             case .year:
-                return String(localized: "Yearly")
+                return String(localized: "Yearly", bundle: .module)
             @unknown default:
                 return ""
         }
@@ -333,13 +333,13 @@ public extension Product.SubscriptionPeriod.Unit {
     var localizedPeriodUnit: String {
         switch self {
             case .day:
-                return String(localized: "Day")
+                return String(localized: "Day", bundle: .module)
             case .week:
-                return String(localized: "Week")
+                return String(localized: "Week", bundle: .module)
             case .month:
-                return String(localized: "Month")
+                return String(localized: "Month", bundle: .module)
             case .year:
-                return String(localized: "Year")
+                return String(localized: "Year", bundle: .module)
             @unknown default:
                 return ""
         }
@@ -349,13 +349,13 @@ public extension Product.SubscriptionPeriod.Unit {
     func localizedPeriodUnit(periodValue: Int) -> String {
         switch self {
             case .day:
-                return String(localized: "\(periodValue) day", comment: "Format: \"3 days\"")
+                return String(localized: "N day", defaultValue: "\(periodValue) day", bundle: .module, comment: "Format: \"3 days\"")
             case .week:
-                return String(localized: "\(periodValue) week", comment: "Format: \"3 weeks\"")
+                return String(localized: "N week", defaultValue: "\(periodValue) week", bundle: .module, comment: "Format: \"3 weeks\"")
             case .month:
-                return String(localized: "\(periodValue) month", comment: "Format: \"3 months")
+                return String(localized: "N month", defaultValue: "\(periodValue) month", bundle: .module, comment: "Format: \"3 months\"")
             case .year:
-                return String(localized: "\(periodValue) year", comment: "Format: \"3 years\"")
+                return String(localized: "N year", defaultValue: "\(periodValue) year", bundle: .module, comment: "Format: \"3 years\"")
             @unknown default:
                 return ""
         }
