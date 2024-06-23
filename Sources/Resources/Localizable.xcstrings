@@ -13,98 +13,6 @@
         }
       }
     },
-    "%lld day" : {
-      "comment" : "Format: \"3 days\"",
-      "localizations" : {
-        "en" : {
-          "variations" : {
-            "plural" : {
-              "one" : {
-                "stringUnit" : {
-                  "state" : "translated",
-                  "value" : "%lld day"
-                }
-              },
-              "other" : {
-                "stringUnit" : {
-                  "state" : "translated",
-                  "value" : "%lld days"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "%lld month" : {
-      "comment" : "Format: \"3 months",
-      "localizations" : {
-        "en" : {
-          "variations" : {
-            "plural" : {
-              "one" : {
-                "stringUnit" : {
-                  "state" : "translated",
-                  "value" : "%lld month"
-                }
-              },
-              "other" : {
-                "stringUnit" : {
-                  "state" : "translated",
-                  "value" : "%lld months"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "%lld week" : {
-      "comment" : "Format: \"3 weeks\"",
-      "localizations" : {
-        "en" : {
-          "variations" : {
-            "plural" : {
-              "one" : {
-                "stringUnit" : {
-                  "state" : "translated",
-                  "value" : "%lld week"
-                }
-              },
-              "other" : {
-                "stringUnit" : {
-                  "state" : "translated",
-                  "value" : "%lld weeks"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "%lld year" : {
-      "comment" : "Format: \"3 years\"",
-      "localizations" : {
-        "en" : {
-          "variations" : {
-            "plural" : {
-              "one" : {
-                "stringUnit" : {
-                  "state" : "translated",
-                  "value" : "%lld year"
-                }
-              },
-              "other" : {
-                "stringUnit" : {
-                  "state" : "translated",
-                  "value" : "%lld years"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
     "Best offer" : {
       "localizations" : {
         "en" : {
@@ -155,6 +63,52 @@
         }
       }
     },
+    "N day" : {
+      "comment" : "Format: \"3 days\"",
+      "localizations" : {
+        "en" : {
+          "variations" : {
+            "plural" : {
+              "one" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%d day"
+                }
+              },
+              "other" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%d days"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "N month" : {
+      "comment" : "Format: \"3 months\"",
+      "localizations" : {
+        "en" : {
+          "variations" : {
+            "plural" : {
+              "one" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%d month"
+                }
+              },
+              "other" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%d months"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "N periods free trial" : {
       "comment" : "Format: \"3 days free trial",
       "extractionState" : "extracted_with_value",
@@ -163,6 +117,52 @@
           "stringUnit" : {
             "state" : "new",
             "value" : "%@ free trial"
+          }
+        }
+      }
+    },
+    "N week" : {
+      "comment" : "Format: \"3 weeks\"",
+      "localizations" : {
+        "en" : {
+          "variations" : {
+            "plural" : {
+              "one" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%d week"
+                }
+              },
+              "other" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%d weeks"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "N year" : {
+      "comment" : "Format: \"3 years\"",
+      "localizations" : {
+        "en" : {
+          "variations" : {
+            "plural" : {
+              "one" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%d year"
+                }
+              },
+              "other" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%d years"
+                }
+              }
+            }
           }
         }
       }
