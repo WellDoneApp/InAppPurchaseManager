@@ -349,13 +349,13 @@ public extension Product.SubscriptionPeriod.Unit {
     func localizedPeriodUnit(periodValue: Int) -> String {
         switch self {
             case .day:
-                return String(localized: "N day", defaultValue: "\(periodValue) day", comment: "Format: \"3 days\"")
+                return String(localized: "%lld day", defaultValue: "\(periodValue) day", comment: "Format: \"3 days\"")
             case .week:
-                return String(localized: "N week", defaultValue: "\(periodValue) week", comment: "Format: \"3 weeks\"")
+                return String(localized: "%lld week", defaultValue: "\(periodValue) week", comment: "Format: \"3 weeks\"")
             case .month:
-                return String(localized: "N month", defaultValue: "\(periodValue) month", comment: "Format: \"3 months")
+                return String(localized: "%lld month", defaultValue: "\(periodValue) month", comment: "Format: \"3 months")
             case .year:
-                return String(localized: "N year", defaultValue: "\(periodValue) year", comment: "Format: \"3 years\"")
+                return String(localized: "%lld year", defaultValue: "\(periodValue) year", comment: "Format: \"3 years\"")
             @unknown default:
                 return ""
         }
