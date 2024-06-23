@@ -219,7 +219,7 @@ public extension Product {
               let introPeriodString = introPeriodString
         else { return nil }
         
-        return String(format: String(localized: "N periods free trial", defaultValue: "%@ free trial", comment: "Format: \"3 days free trial"), introPeriodString)
+        return String(localized: "N periods free trial", defaultValue: "\(introPeriodString) free trial", comment: "Format: \"3 days free trial")
     }
     
     /// Format: "3 days" or "1 month"
@@ -349,13 +349,13 @@ public extension Product.SubscriptionPeriod.Unit {
     func localizedPeriodUnit(periodValue: Int) -> String {
         switch self {
             case .day:
-                return String(format: String(localized: "N day", defaultValue: "%lld day", comment: "Format: \"3 days\""), periodValue)
+                return String(localized: "N day", defaultValue: "\(periodValue) day", comment: "Format: \"3 days\"")
             case .week:
-                return String(format: String(localized: "N week", defaultValue: "%lld week", comment: "Format: \"3 weeks\""), periodValue)
+                return String(localized: "N week", defaultValue: "\(periodValue) week", comment: "Format: \"3 weeks\"")
             case .month:
-                return String(format: String(localized: "N month", defaultValue: "%lld month", comment: "Format: \"3 months"), periodValue)
+                return String(localized: "N month", defaultValue: "\(periodValue) month", comment: "Format: \"3 months")
             case .year:
-                return String(format: String(localized: "N year", defaultValue: "%lld year", comment: "Format: \"3 years\""), periodValue)
+                return String(localized: "N year", defaultValue: "\(periodValue) year", comment: "Format: \"3 years\"")
             @unknown default:
                 return ""
         }
